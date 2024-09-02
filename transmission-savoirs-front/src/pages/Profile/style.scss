@@ -1,0 +1,65 @@
+@use '../../styles/vars';
+@use '../../styles/mixin';
+
+#profil {
+  .panel {
+    margin-bottom: vars.$space-20;
+  }
+}
+ 
+.post-previews__title {
+  padding-bottom: vars.$space-20;
+  font-weight: bold;
+}
+
+.contact{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: vars.$space-20;
+  border: 2px solid vars.$primary-color;
+  border-radius: vars.$panel-radius;
+}
+.email{
+  text-decoration: underline;
+  margin: 0;
+  color: vars.$primary-color;
+  transition: all linear 0.3s;
+
+  &:hover, &:focus {
+    color: vars.$primary-color-alt;
+  }
+}
+.user-infos__contact {
+  display: flex;
+  justify-content: center;
+  padding: vars.$space-15;
+
+  @include mixin.media('medium') {
+    justify-content: right;
+    padding-right: vars.$space-30;
+  }
+}
+
+.disclaimer {
+  padding: vars.$space-15;
+  border-radius: vars.$panel-radius;
+  background-color: vars.$warning-color;
+  font-size: 0.8em;
+  &-text{
+    &__span-bold{
+      font-weight: bold;
+      text-decoration: underline;
+    }
+  }
+}
+
+.go-to-connection{
+  display: flex;
+  justify-content: center;
+  @include mixin.media('medium') {
+  justify-content: right;
+  padding-right: vars.$space-30;
+  }
+  
+}

@@ -1,0 +1,82 @@
+@use '../../styles/vars';
+@use '../../styles/mixin';
+
+.form {
+
+  &__submit {
+
+    button {
+      justify-content: center;
+
+      @include mixin.media('small') {
+        display: inline-block;
+        height: 3.4375em;
+        width: 50%;
+      }
+    }
+
+    &__info {
+      margin-top: vars.$space-10;
+      opacity: 0.7;
+    }
+  }
+
+  &__field {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: vars.$space-30;
+
+    &__error {
+      margin-top: vars.$space-10;
+      color: vars.$error-color;
+    }
+
+    label {
+      margin-bottom: vars.$space-10;
+    }
+
+    input {
+      border: 2px solid vars.$medium-grey-color;
+      border-radius: vars.$btn-radius;
+      height: 2.5em;
+      font-size: 1em;
+      padding-left: vars.$space-10;
+
+      &:focus {
+        border: 2px solid vars.$primary-color;
+      }
+
+      @include mixin.media('small') {
+        height: 3.4375em;
+      }
+    }
+  }
+}
+
+.password__helper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: transparent;
+  text-decoration: underline;
+  border: none;
+  opacity: 0.5;
+
+  &:focus {
+    color: vars.$primary-color;
+  }
+}
+
+
+.reset-password {
+  text-decoration: underline;
+  color: vars.$primary-color;
+  margin-bottom: vars.$space-20;
+  display: block;
+  transition: all linear 0.3s;
+
+  &:hover {
+    color: vars.$primary-color-alt;
+  }
+}

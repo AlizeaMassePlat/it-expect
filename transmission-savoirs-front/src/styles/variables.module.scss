@@ -1,0 +1,8 @@
+@use './vars';
+
+/// Variable module to use directly in component
+:export {
+  primaryColor: vars.$primary-color;
+  space20: vars.$space-20;
+  redColor: vars.$error-color;
+}

@@ -1,0 +1,19 @@
+@use '../../styles/mixin';
+@use '../../styles/vars';
+
+.posts {
+  display: flex;
+  flex-direction: column;
+  gap: vars.$space-10;
+
+  @include mixin.media('medium') {
+    flex-direction: row;
+  }
+
+}
+
+#mon-compte {
+  section {
+    margin-bottom: vars.$space-20;
+  }
+}

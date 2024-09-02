@@ -1,0 +1,37 @@
+@use "sass:color";
+
+// font variables
+$font-family: 'Montserrat', sans-serif;
+$font-big: 1.5em; // 24px
+$font-medium: 1.25em; // 20px
+
+// colors
+// $primary-color: #f48f5b;
+$primary-color: #F16D3F;
+$primary-color-alt: color.scale($primary-color, $blackness: 20%);
+
+$light-color: #FFFFFF;
+$light-grey-color: #F8F8F8;
+$medium-grey-color: #DADADA;
+$dark-grey-color: rgba(0,0,0, 0.5);
+
+$error-color: #eb5252;
+$error-color-alt:  color.scale($error-color, $blackness: 20%);
+$success-color: #19D258;
+$warning-color: #ffe9aa;
+
+$dark-color: #1C1C1C;
+
+$light-stroke-color: $medium-grey-color;
+
+// radius
+$btn-radius: 0.375em;
+$panel-radius: 1.25em;
+
+// spacing
+$space-10: 0.625em;
+$space-15: 0.9375em;
+$space-20: 1.25em;
+$space-30: 1.875em;
+
+$transition: all linear 0.3s;

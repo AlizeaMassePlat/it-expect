@@ -1,0 +1,40 @@
+@use '../../styles/mixin';
+@use '../../styles/vars';
+
+.hero {
+  position: relative;
+  width: 100%;
+
+  &__intro {
+    position: relative;
+    z-index: 1;
+
+    @include mixin.media('small') {
+      max-width: 50%;
+    }
+  }
+
+  &__title {
+    font-size: 2.5em;
+    line-height: 1.1em;
+    font-weight: bold;
+    margin-bottom: vars.$space-10;
+    text-shadow: 1px 1px 5px vars.$light-grey-color;
+  }
+
+  &__bg {
+    position: absolute;
+    right: 0;
+    bottom: 10%;
+    z-index: 0;
+    width: 100%;
+    opacity: 0.3;
+
+    @include mixin.media('small') {
+      opacity: 1;
+      max-width: 55%;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+}

@@ -1,0 +1,119 @@
+@use 'reset';
+@use 'vars';
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: vars.$font-family;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  background-color: vars.$light-grey-color;
+  min-height: 100vh;
+}
+
+.section {
+  padding: vars.$space-20 0;
+  &__header {
+    margin-bottom: vars.$space-30;
+    
+    &.flex-header {
+      display: flex;
+      flex-wrap: wrap;
+      gap: vars.$space-10;
+  
+      .section__title {
+        display: inline-block;
+      }
+
+      .flex__title__link {
+        color: vars.$primary-color;
+        text-decoration: underline;
+        transition: vars.$transition;
+
+        &:hover, &:focus {
+          color: vars.$primary-color-alt;
+        }
+      }
+    }
+  }
+
+  
+  &__title {
+    font-size: vars.$font-big;
+    margin-bottom: vars.$space-10;
+    font-weight: bold;
+  }
+}
+
+em {
+  font-style: normal;
+  font-weight: bold;
+}
+
+p {
+  margin-bottom: vars.$space-10;
+}
+
+.link {
+  color: vars.$primary-color;
+  transition: all linear 0.3s;
+
+  &:hover {
+    color: vars.$primary-color-alt;
+  }
+}
+
+.spacer {
+  flex-grow: 1;
+}
+
+.divider {
+  margin: 0;
+  position: relative;
+
+  &::after {
+    position: absolute;
+    left: 40px;
+    top: 50%;
+    content: "";
+    height: 1px;
+    width: calc(100% - 40px);
+    background-color: vars.$medium-grey-color;
+  }
+}
+
+.button-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: vars.$space-20;
+}
+
+.password__toggle {
+  margin-bottom: vars.$space-10;
+  background-color: transparent;
+  border: none;
+  color: vars.$primary-color;
+  transition: vars.$transition;
+  text-align: left;
+  padding-left: 0;
+  margin-top: 0;
+
+  &:focus {
+    color: vars.$primary-color-alt;
+  }
+}
+
+.select-input, input {
+  font-family: vars.$font-family;
+
+  &:focus-visible, :focus {
+    border: 2px solid vars.$primary-color;
+    outline-color: vars.$primary-color;
+  }
+}
+
+*:focus-visible, *:focus {
+  outline-color: vars.$primary-color;
+}

@@ -1,0 +1,83 @@
+@use '../../styles/mixin';
+@use '../../styles/vars';
+
+.account {
+
+  @include mixin.media('medium') {
+    display: flex;
+    gap: vars.$space-30;
+    flex-direction: row;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+
+    @include mixin.media('medium') {
+      flex-grow: 1;
+    }
+  }
+
+  &__avatar {
+    margin-bottom: vars.$space-30;
+    flex-basis: 20%;
+    min-width: 20%;
+    border-radius: 500px;
+    // overflow: hidden;
+    position: relative;
+    display: inline-block;
+    
+    @include mixin.media('medium') {
+      margin-bottom: 0;
+      flex-grow: 0;
+    }
+
+    &__legend {
+      position: absolute;
+      top: 0;
+      left: 0;
+      border: 1px solid vars.$primary-color-alt;
+      background-color: vars.$primary-color;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: vars.$space-10;
+      border-radius: 500px;
+      color: vars.$light-color;
+      transition: vars.$transition;
+
+      &:hover, &:focus {
+        background-color: vars.$primary-color-alt;
+      }
+    }
+
+    &__img {
+      // max-width: 80%;
+      width: 100%;
+      border-radius: 500px;
+      display: block;
+      margin: 0 auto;
+      background: vars.$light-color;
+    }
+  }
+
+  &__username {
+    font-size: vars.$font-big;
+    font-weight: bold;
+  }
+
+  &__title {
+    font-size: vars.$font-medium;
+    font-weight: bold;
+  }
+
+  &__creation {
+    opacity: 0.5;
+    margin-bottom: vars.$space-20;
+  }
+
+  &__about {
+    margin-bottom: vars.$space-20;
+  }
+
+}

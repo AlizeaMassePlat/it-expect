@@ -1,0 +1,12 @@
+@use '../../styles/vars';
+
+.perso-infos {
+  &__list {
+    margin: vars.$space-20 0;
+  }
+
+  &__label {
+    font-weight: bold;
+    margin-right: vars.$space-10;
+  }
+}

@@ -1,0 +1,65 @@
+@use '../../styles/vars';
+@use '../../styles/mixin';
+
+.tab {
+  margin: 0 vars.$panel-radius;
+
+  &__btn {
+    background-color: vars.$light-color;
+    color: vars.$dark-color;
+    border: 1px solid vars.$light-stroke-color;
+    font-size: 1em;
+    
+    padding: vars.$space-10 vars.$space-30;
+    display: inline-flex;
+    align-items: center;
+    width: fit-content;
+    border-bottom: none;
+
+    transition: all linear 0.3s;
+
+    &:hover {
+      border-color: vars.$primary-color-alt;
+      color: vars.$primary-color-alt;
+    }
+
+    &:first-child {
+      border-radius: vars.$btn-radius vars.$btn-radius 0 0;
+      width: 100%;
+
+      @include mixin.media('small') {
+        border-radius: vars.$btn-radius 0 0 0;
+        border-right: none;
+        width: auto;
+      }
+    }
+
+    &:last-child {
+      width: 100%;
+
+      @include mixin.media('small') {
+        border-radius: 0 vars.$btn-radius 0 0;
+        border-right: none;
+        width: auto;
+      }
+    }
+    
+    &--active {
+      font-weight: bold;
+      background-color: vars.$primary-color;
+
+      &:hover {
+        border-color: vars.$primary-color-alt;
+        color: vars.$dark-color;
+      }
+    }
+
+    
+  }
+}
+
+.posts-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: vars.$space-10;
+}

@@ -1,0 +1,84 @@
+@use '../../styles/vars';
+@use '../../styles/mixin';
+
+.footer {
+  margin-top: auto;
+  background-color: vars.$light-color;
+
+  &__section {
+    @include mixin.media('medium') {
+      display: flex;
+    }
+  }
+
+  &__logo, &-nav {
+    padding: vars.$space-10;
+    border-bottom: 1px solid vars.$light-stroke-color;
+  }
+
+  &__logo {
+    @include mixin.media('medium') {
+      flex-grow: 1;
+    }
+  }
+
+  &__copyright {
+    padding: vars.$space-10;
+  }
+
+  &-nav {
+
+    @include mixin.media('medium') {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      align-content: center;
+      padding: vars.$space-20;
+    }
+
+    &__title {
+      display: none;
+
+      @include mixin.media('medium') {
+        display: flex;
+      }
+    }
+
+    &__list {
+      display: flex;
+      margin-bottom: vars.$space-10;
+
+      @include mixin.media('medium') {
+        flex-direction: column;
+      }
+    }
+
+    &__item {
+      margin-right: vars.$space-20;
+
+      &:last-of-type {
+        margin: 0;
+      }
+    }
+
+    &__link {
+      color: vars.$primary-color;
+      text-decoration: underline;
+      transition: vars.$transition;
+
+      &:hover {
+        color: vars.$primary-color-alt;
+      }
+
+      &:focus, &:focus-visible {
+        outline-color: vars.$primary-color;
+        border-radius: vars.$btn-radius;
+        border: 2px solid vars.$primary-color;
+      }
+
+      &:hover .button {
+        text-decoration: none;
+      }
+    
+    }
+  }
+}

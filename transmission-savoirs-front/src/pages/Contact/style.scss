@@ -1,0 +1,22 @@
+@use '../../styles/vars';
+@use '../../styles/mixin';
+
+textarea { 
+  font-family: vars.$font-family;
+
+  border: 2px solid vars.$medium-grey-color;
+  border-radius: vars.$btn-radius;
+  min-height: 2.5em;
+  font-size: 1em;
+  padding-left: vars.$space-10;
+  padding-top: vars.$space-10;
+  padding-bottom: vars.$space-10;
+
+  @include mixin.media('small') {
+    min-height: 3.4375em;
+  }
+
+  /* will prevent resizing horizontally */
+  resize:vertical;
+}
+

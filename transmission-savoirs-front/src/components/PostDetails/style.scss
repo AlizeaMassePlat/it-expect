@@ -1,0 +1,50 @@
+@use '../../styles/vars';
+@use '../../styles/mixin';
+
+
+.post-informations {
+  margin-top: 7em;
+  display: flex;
+  flex-direction: column;
+  gap: vars.$space-10;
+}
+
+.post-infos {
+  width: 100%;
+  // position: relative;
+  top: 0;
+
+  &__frame{
+    border-radius: vars.$panel-radius vars.$panel-radius 0 0; 
+    max-height: 8em;
+    width: 100%;
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  &__img{
+    width: 100%;
+    top: 0;
+    top: 50%;
+    transform: translateY(-30%);
+  }
+
+  &__title{
+    font-weight: bold;
+  }
+  &__date {
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 0.8em;
+    margin-top: -10px;
+  }
+  &__location{
+    font-weight: bold;
+    display: flex;
+  }
+  &__location-icone{
+    width: 1.5em;
+    height: 1.5em;
+    margin-right: .5em;
+  }
+}

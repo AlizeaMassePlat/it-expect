@@ -1,0 +1,39 @@
+@use '../../styles/vars';
+
+.categories {
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: vars.$space-10;;
+  }
+
+
+  &__link {
+    display: inline-flex;
+    align-items: center;
+    padding: vars.$space-10 vars.$space-20 vars.$space-10 vars.$space-10;
+    background-color: transparent;
+    border: 1px solid vars.$primary-color;
+    border-radius: 50px;
+    font-weight: bold;
+    transition: all linear 0.3s;
+
+    &:hover {
+      background-color: vars.$primary-color;
+    }
+  }
+
+  &__icon {
+    width: 30px;
+    height: 30px;
+    overflow: hidden;
+    border-radius: 30px;
+    display: inline-flex;
+    justify-content: center;
+    margin-right: vars.$space-10;
+  }
+
+  &__img {
+    height: 30px;
+  }
+}

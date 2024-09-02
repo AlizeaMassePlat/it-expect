@@ -1,0 +1,8 @@
+@use '../../styles/vars';
+
+.delete {
+  &__warning {
+    color: vars.$error-color;
+    font-weight: bold;
+  }
+}

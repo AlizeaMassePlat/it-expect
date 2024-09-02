@@ -1,0 +1,28 @@
+@use '../../styles/vars';
+@use '../../styles/mixin';
+
+.account-panel {
+  display: flex;
+  flex-direction: column;
+  gap: vars.$space-20;
+
+  @include mixin.media('small') {
+    flex-direction: row;
+  }
+
+  &__bloc {
+    flex-grow: 1;
+    flex-basis: 50%;
+
+    button {
+      width: 100%;
+      margin-bottom: vars.$space-20;
+    }
+  }
+
+  &__label {
+    margin-top: vars.$space-20;
+    margin-bottom: 0;
+    font-weight: bold;
+  }
+}

@@ -1,0 +1,35 @@
+@use '../../styles/mixin';
+@use '../../styles/vars';
+
+.team {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: vars.$space-10;
+
+  @include mixin.media('small') {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include mixin.media('medium') {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @include mixin.media('large') {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @include mixin.media('extra-large') {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+.section {
+  &__header {
+    margin-bottom: vars.$space-30;
+  }
+  
+  &__title {
+    font-size: vars.$font-big;
+    font-weight: bold;
+  }
+}

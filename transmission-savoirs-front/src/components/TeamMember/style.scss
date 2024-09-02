@@ -1,0 +1,55 @@
+@use '../../styles/vars';
+@use '../../styles/mixin';
+
+.team__member {
+  display: flex;
+  flex-direction: column;
+  background-color: vars.$light-color;
+  border-radius: vars.$panel-radius;
+  border: 1px solid vars.$light-stroke-color;
+
+  @include mixin.padding;
+
+  &__avatar {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 250px;
+    border-radius: 300px;
+    background-color: vars.$primary-color;
+    margin-bottom: vars.$space-30;
+  }
+
+  &__name {
+    font-size: vars.$font-big;
+    font-weight: bold;
+  }
+
+  &__role {
+    margin-bottom: vars.$space-10;
+  }
+
+  &__desc {
+    margin-bottom: vars.$space-30;
+    font-style: italic;
+  }
+
+  &__social {
+    &__item {
+      margin-bottom: vars.$space-10;
+    }
+    &__link {
+      display: flex;
+      align-items: center;
+      color: vars.$primary-color;
+      transition: all linear 0.3s;
+
+      &:hover {
+        color: vars.$primary-color-alt;
+      }
+
+      img {
+        margin-right: vars.$space-10;
+      }
+    }
+  }
+}

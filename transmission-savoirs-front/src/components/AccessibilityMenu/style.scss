@@ -1,0 +1,25 @@
+@use '../../styles/vars';
+
+.a11y-nav {
+  position: absolute;
+  top: -10em;
+  z-index: 100;
+  width: 100%;
+
+  &__link {
+    background-color: vars.$light-color;
+    position: absolute;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(4.6875em - vars.$space-20);
+    width: calc(100% - vars.$space-20);
+    margin: vars.$space-10 auto 0;
+
+    &:focus, :hover {
+      top: 10em;
+    }
+  }
+}

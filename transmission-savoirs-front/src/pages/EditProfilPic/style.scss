@@ -1,0 +1,53 @@
+@use '../../styles/vars';
+@use '../../styles/mixin';
+
+.avatars{
+  &__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: vars.$space-20;
+  justify-content: flex-start;
+  margin-bottom: vars.$space-20;
+
+    .avatar {
+      &__radio {
+        width: 100%;
+        aspect-ratio : 1 / 1;
+        position: relative;
+        flex-basis: 40%;
+
+        @include mixin.media('small') {
+          flex-basis: 30%;
+        }
+        @include mixin.media('medium') {
+          flex-basis: 25%;
+        }
+        @include mixin.media('large') {
+          flex-basis: 20%;
+        }
+      }
+
+      &__img {
+        width: 100%;
+        aspect-ratio : 1 / 1;
+        border-radius: 100%;
+        position: absolute;
+        left: 0;
+        z-index: 0;
+        pointer-events: none;
+        border: 1px solid vars.$primary-color;
+      }
+    }
+
+
+    input[type=radio]+label {
+      width: 100%;
+      aspect-ratio : 1 / 1;
+      display:inline-block;
+      padding: 0 0 0 0px;
+      // background-image: url("/public/images/avatars/BEARD1.png");
+      background-size: 100%;
+      border-radius: 100%;
+    }
+  }
+}

@@ -1,0 +1,49 @@
+@use '../../styles/vars';
+@use '../../styles/mixin';
+
+.about {
+  &.panel {
+    @include mixin.media('medium') {
+      background: vars.$light-color url(../../components/Hero/hero.png);
+      background-position: right;
+      background-size: 50%;
+      background-repeat: no-repeat;
+    }
+  }
+
+  &__title {
+  font-size: 3em;
+  font-weight: bold;
+  margin-bottom: vars.$space-10;
+  }
+
+  &__subtitle {
+    font-size: vars.$font-big;
+    font-weight: bold;
+    margin-bottom: vars.$space-20;
+    }
+
+  &__intro {
+    font-size: 1.25em;
+    font-style: italic;
+    padding-bottom: vars.$space-20;
+  } 
+
+  &__buttons {
+    display: flex;
+    flex-direction: column;
+    @include mixin.media('medium') {
+      width: 50%;
+    }
+    
+  }
+
+  &__link {
+    margin-bottom: vars.$space-20;
+    @include mixin.media('medium') {
+      margin-bottom: vars.$space-20;
+    }
+  }
+
+}
+

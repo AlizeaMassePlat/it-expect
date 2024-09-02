@@ -1,0 +1,7 @@
+@use '../../styles/vars';
+@use '../../styles/mixin';
+
+.error {
+    color: vars.$error-color;
+    margin-bottom: vars.$space-20;
+}

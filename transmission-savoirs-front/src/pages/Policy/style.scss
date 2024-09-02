@@ -1,0 +1,20 @@
+@use '../../styles/vars';
+
+#policy {
+  ol, ul {
+    margin-left: vars.$space-20;
+  
+  }
+  
+  ul {
+    list-style: disc;
+  }
+  
+  ol {
+    list-style: auto;
+  }
+  
+  li {
+    margin-bottom: vars.$space-10;
+  }
+}

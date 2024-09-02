@@ -1,0 +1,55 @@
+@use '../../styles/vars';
+@use '../../styles/mixin';
+
+.err404 {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+
+  @include mixin.media('medium') {
+    max-width: 70%;
+  }
+
+  &__bg {
+    display: none;
+    
+
+    @include mixin.media('medium') {
+      display: block;
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 0;
+    }
+  }
+
+  &__title {
+    font-size: 3em;
+    font-weight: bold;
+    margin-bottom: vars.$space-10;
+  }
+
+  &__subtitle {
+    font-size: vars.$font-medium;
+  }
+
+  &__buttons {
+    display: flex;
+    flex-direction: column;
+    gap: vars.$space-10;
+    width: 100%;
+
+    button {
+      width: 100%;
+      justify-content: center;
+    }
+    @include mixin.media('medium') {
+      flex-direction: row;
+
+      button {
+        width: auto;
+      }
+    }
+  }
+}

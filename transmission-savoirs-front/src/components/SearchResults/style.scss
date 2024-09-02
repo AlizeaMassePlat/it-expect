@@ -1,0 +1,12 @@
+@use '../../styles/vars';
+@use '../../styles/mixin';
+
+.thumbnails__title {
+    font-size: vars.$font-big;
+    font-weight: bold;
+    margin-bottom: vars.$space-30;
+    // responsive
+    @include mixin.media('medium') {
+      margin-bottom: vars.$space-20;
+    }
+  }

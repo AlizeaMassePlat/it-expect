@@ -1,0 +1,20 @@
+@use '../../styles/mixin';
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  
+  @include mixin.padding;
+
+  @include mixin.media('medium') {
+    max-width: 90%;
+  }
+
+  @include mixin.media('large') {
+    max-width: 1200px;
+  }
+
+  @include mixin.media('extra-large') {
+    max-width: 1200px;
+  }
+}

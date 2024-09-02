@@ -1,0 +1,15 @@
+@use '../../styles/vars';
+
+.label {
+  border-radius: 50px;
+  background-color: transparent;
+  border: 1px solid vars.$primary-color;
+  transition: all linear 0.3s;
+  padding: calc(vars.$space-10 / 2) vars.$space-10;
+  display: block;
+  color: vars.$dark-color;
+
+  &:hover {
+    background-color: vars.$primary-color;
+  }
+}

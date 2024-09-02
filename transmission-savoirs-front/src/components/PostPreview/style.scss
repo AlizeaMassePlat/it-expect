@@ -1,0 +1,82 @@
+@use '../../styles/mixin';
+@use '../../styles/vars';
+
+.post-preview {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  background-color: vars.$light-grey-color;
+  border-radius: vars.$btn-radius;
+  flex-basis: 100%;
+  flex-grow: 1;
+  gap: vars.$space-10;
+
+  @include mixin.media('small') {
+    flex-basis: 40%;
+  }
+
+  @include mixin.media('medium') {
+    flex-basis: 35%;
+  }
+  
+  @include mixin.media('large') {
+    flex-basis: 20%;
+    max-width: 25%;
+  }
+
+  &__cover {
+    overflow: hidden;
+    border-top-left-radius: vars.$btn-radius;
+    border-top-right-radius: vars.$btn-radius;
+  }
+
+  &__img {
+    width: 100%;
+  }
+
+  &__title {
+    padding: 0 vars.$space-10;
+    font-size: vars.$font-medium;
+    font-weight: bold;
+    word-break: break-all;
+  }
+
+  &__date {
+    opacity: 0.5;
+    padding-left: vars.$space-10;
+  }
+
+  &__buttons {
+    display: flex;
+    padding-left: vars.$space-10;
+    padding-right: vars.$space-10;
+    padding-bottom: vars.$space-10;
+
+    button, a  {
+      width: 100%;
+      flex-grow: 1;
+      justify-content: center;
+      padding-left: 0;
+      padding-right: 0;
+      justify-content: center;
+    }
+  }
+}
+
+.delete-btn {
+  font-weight: bold;
+  font-size: 1em;
+  border-radius: vars.$btn-radius;
+  padding: vars.$space-10;
+  display: flex;
+  align-items: center;
+  background-color: vars.$error-color;
+  color: vars.$dark-color;
+  transition: all linear 0.3s;
+  border: 1px solid vars.$error-color;
+
+  img {
+    width: 24px;
+  }
+}

@@ -1,0 +1,132 @@
+@use '../../styles/vars';
+@use '../../styles/mixin';
+
+.thumbnails {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+
+  &__header {
+    margin-bottom: vars.$space-10;
+
+    @include mixin.media('small') {
+      margin-bottom: 0;
+    }
+  }
+
+  &__title {
+    display: block;
+
+    @include mixin.media('small') {
+      display: inline-block;
+      margin-right: vars.$space-10;
+    }
+
+    &__link{
+      text-decoration: underline;
+      color: vars.$primary-color;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: vars.$space-10;
+
+    &.similar {
+      .thumbnail {
+        @include mixin.media('small') {
+          max-width: 50%;
+        }
+        @include mixin.media('medium') {
+          max-width: 35%;
+        }
+        @include mixin.media('large') {
+          max-width: 20%;
+        }
+      }
+    }
+  }
+}
+
+.thumbnail {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: vars.$light-grey-color;
+  border-radius: vars.$btn-radius;
+  padding: vars.$space-10;
+  flex-basis: 100%;
+  flex-grow: 1;
+  gap: vars.$space-10;
+
+  @include mixin.media('small') {
+    flex-basis: 30%;
+  }
+
+  @include mixin.media('medium') {
+    flex-basis: 25%;
+    max-width: 50%;
+  }
+  
+  @include mixin.media('large') {
+    flex-basis: 20%;
+    max-width: 35%;
+  }
+
+  &-user {
+    &__infos {
+      display: flex;
+      align-items: center;
+    }
+
+    &__img {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: vars.$light-color;
+      width: 2em;
+      height: 2em;
+      border-radius: 50%;
+      border: 1px solid vars.$light-stroke-color;
+      margin-right: vars.$space-10;
+  
+      &__avatar {
+        width: 1.3em;
+        height: 1.3em;
+      }
+    }
+  }
+
+  &-infos{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: vars.$space-10;
+
+    &__img{
+      max-width: 100%;
+    }
+    &__title{
+      text-align: left;
+      font-weight: bold;
+      word-break: break-all;
+    }
+    &__description {
+      font-size: .8em;
+      line-height: 1em;
+      padding: .3em;
+    }
+  }
+
+  &__link {
+    width: 100%;
+  }
+
+  .button {
+    width: 100%;
+    justify-content: center;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}

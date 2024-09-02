@@ -1,0 +1,11 @@
+@use '../../styles/vars';
+@use '../../styles/mixin';
+
+input[type="date" i] {
+  padding-right: 20px;
+  font-family: vars.$font-family;
+
+  @include mixin.media('small') {
+    height: 3.4375em;
+  }
+}
